@@ -4,8 +4,8 @@ Naive Bayes Classifier
 
 Team Details:
 1. Rohan Maheshwari		2017B4A70965H
-2. Keshav Kabra	
-3. Meganaa Reddy
+2. Keshav Kabra			2018AAPS0527H
+3. Meganaa Reddy		2017B3A70973H
 """ 
 
 import math
@@ -83,7 +83,6 @@ def create_Model(data,labels,vocab,inverted_index):
 		test_nums = datanums[i*testlen : (i+1)*testlen]
 		train_nums2 = datanums[(i+1)*testlen : datalen]
 		train_nums = train_nums1 + train_nums2
-		# print(i," - ", len(test_nums), " ", len(train_nums))
 		train_nums.sort()
 
 		word_probabilities = {}
@@ -94,6 +93,7 @@ def create_Model(data,labels,vocab,inverted_index):
 				train_positive += 1
 			else:
 				train_negative += 1
+		
 		# print("Total positive examples in training set are = ", train_positive)
 		# print("Total negative examples in training set are = ", train_negative)
 
@@ -126,7 +126,7 @@ def create_Model(data,labels,vocab,inverted_index):
 				correct_classified += 1
 
 		accuracies.append((correct_classified*100)/len(test_nums))
-	print("Accuracy over the 7 fold cross validation:\n",list(np.around(np.array(accuracies),4)))
+	print("\nAccuracy over the 7 fold cross validation:\n\t"	,list(np.around(np.array(accuracies),4)))
 	return sum(accuracies) / len(accuracies)
 
 
@@ -143,7 +143,6 @@ if __name__ == '__main__':
 		data.append(line)
 		labels.append(line[-2])
 		for word in line.split():
-			# print(word)
 			if len(word)>=3 and word!="and" and word!="the":
 				vocab.add(word)
 
