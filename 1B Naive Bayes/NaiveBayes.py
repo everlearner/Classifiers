@@ -1,11 +1,11 @@
 """
 ML Assignment 1
-Naive Bayes Classifier
+1B: Naive Bayes Classifier
 
 Team Details:
 1. Rohan Maheshwari		2017B4A70965H
 2. Keshav Kabra			2018AAPS0527H
-3. Meganaa Reddy		2017B3A70973H
+3. Godhala Meganaa		2017B3A70973H
 """ 
 
 import math
